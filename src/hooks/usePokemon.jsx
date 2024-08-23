@@ -19,8 +19,6 @@ export const usePokemons = () => {
         localStorage.setItem("pokemonDataList", JSON.stringify(data.results));
       } catch (error) {
         setError(error);
-      } finally {
-        setLoading(false);
       }
     };
 
