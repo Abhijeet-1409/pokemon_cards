@@ -1,5 +1,6 @@
 export class Pokemon {
-    constructor(url, name, height, weight) {
+    constructor(id,url, name, height, weight) {
+        this.id = id;
         this.type = [];
         this.url = url;
         this.stats = [];
@@ -8,13 +9,8 @@ export class Pokemon {
         this.abilities = [];
         this.height = height;
         this.weight = weight;
-        this.id = this.extractIdFromUrl(url);
     }
 
-    extractIdFromUrl(url) {
-        const match = url.match(/pokemon\/(\d+)\//);
-        return match ? match[1] : null;
-    }
 
     setSprites(sprites) {
         if (sprites) {

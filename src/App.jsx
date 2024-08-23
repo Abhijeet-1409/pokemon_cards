@@ -1,18 +1,20 @@
 import './App.css'
 import { usePokemons } from './hooks/usePokemon';
 import Loader from './components/loader/loader';
+import Error from './components/error/error';
 function App() {
   const {loading,pokemons,error} = usePokemons();
 
   if (loading) {
-    console.log("Loading");
     return <Loader/>;
   }
-  if (error) return <h1>Error: {error.message}</h1>;
+  if (error) {
+    return <Error message={error.message}/>;
+  }
 
   return (
     <div>
-      
+
     </div>
   );
 }

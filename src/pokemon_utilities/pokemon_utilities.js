@@ -9,8 +9,8 @@ export const createPokemon = ({ name, url }) => {
             return response.json();
         })
         .then(data => {
-            const { stats, types, height, weight, sprites, abilities } = data;
-            const pokemonInstance = new Pokemon(url, name, height, weight);
+            const { id ,stats, types, height, weight, sprites, abilities } = data;
+            const pokemonInstance = new Pokemon(id,url, name, height, weight);
             pokemonInstance.setTypes(types);
             pokemonInstance.setStats(stats);
             pokemonInstance.setSprites(sprites);
