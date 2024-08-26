@@ -2,6 +2,7 @@ import './App.css'
 import { usePokemons } from './hooks/usePokemon';
 import Loader from './components/loader/loader';
 import Error from './components/error/error';
+import Header from './components/header/Header';
 function App() {
   const {loading,pokemons,error} = usePokemons();
 
@@ -13,9 +14,9 @@ function App() {
   }
 
   return (
-    <div>
-
-    </div>
+    <>
+      <Header/>
+    </>
   );
 }
 
