@@ -3,18 +3,17 @@ import { useContext, useRef } from 'react';
 import { AppContext } from '../../context/app_context';
 export default function SearchBar({ }) {
    const inputRef = useRef();
-   const { setOffset, setSearch } = useContext(AppContext);
+   const { setOffset, setSearch,setPage } = useContext(AppContext);
 
    const handleInputChange = () => {
       const value = inputRef.current?.value.trim();
-      if (value.length) {
-         setSearch(value);
-      }
+      setSearch(value);
    };
 
    const handleSelectChange = (event) => {
       const value = Number(event.target.value);
       setOffset(value);
+      setPage(0);
    };
 
    return (
