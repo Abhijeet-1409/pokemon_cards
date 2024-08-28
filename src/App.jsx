@@ -1,5 +1,5 @@
 import './App.css';
-import { useContext, useEffect, useState } from 'react';
+import { useContext} from 'react';
 import { AppContext } from './context/app_context';
 import Loader from './components/loader/loader';
 import Error from './components/error/error';

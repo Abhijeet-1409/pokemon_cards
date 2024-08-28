@@ -12,6 +12,8 @@ export default function PaginationButtons() {
        });
     }
 
+    const pageinfo = totalPage ? `${page + 1} / ${totalPage}` : '0 / 0';
+
     return (
         <div className={styles.container}>
             <button 
@@ -21,7 +23,7 @@ export default function PaginationButtons() {
             >
                 &lt;
             </button>
-            <span className={styles.pageInfo}>{`${page + 1} / ${totalPage}`}</span>
+            <span className={styles.pageInfo}>{pageinfo}</span>
             <button 
                 className={styles.button} 
                 onClick={handleClick}

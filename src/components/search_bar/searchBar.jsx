@@ -6,8 +6,9 @@ export default function SearchBar({ }) {
    const { setOffset, setSearch,setPage } = useContext(AppContext);
 
    const handleInputChange = () => {
-      const value = inputRef.current?.value.trim();
+      const value = inputRef.current?.value.trim().replace(" ","-");
       setSearch(value);
+      setPage(0);
    };
 
    const handleSelectChange = (event) => {
@@ -20,12 +21,8 @@ export default function SearchBar({ }) {
       <div className={styles.search_div}>
          <select name="offset" id={styles.offset} onChange={handleSelectChange}>
             <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
             <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
+            <option value="12">12</option>
          </select>
          <input ref={inputRef} onChange={handleInputChange} type="text" name="search_box" id={styles.search_box} />
       </div>

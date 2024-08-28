@@ -1,9 +1,9 @@
 export class Pokemon {
     constructor(id,url, name, height, weight) {
         this.id = id;
-        this.type = [];
         this.url = url;
         this.stats = [];
+        this.types = [];
         this.name = name;
         this.sprites = [];
         this.abilities = [];
@@ -16,8 +16,8 @@ export class Pokemon {
         if (sprites) {
             const { front_default, other } = sprites;
             this.sprites.push(front_default);
-            if (other && other['official-artwork']) {
-                this.sprites.push(other['official-artwork'].front_default);
+            if (other && other['showdown']) {
+                this.sprites.push(other['showdown'].front_default);
             }
         }
     }
@@ -39,7 +39,7 @@ export class Pokemon {
 
     setTypes(types) {
         if (types) {
-            this.type = types.map(typeObj => typeObj.type.name);
+            this.types = types.map(typeObj => typeObj.type.name);
         }
     }
 }
